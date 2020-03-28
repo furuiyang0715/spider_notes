@@ -22,7 +22,8 @@ def main():
         processes.append(p)
 
     for p in processes:
-        p.join()
+        # 主进程最多等待改进程 1 s
+        p.join(1)
 
 
 if __name__ == "__main__":
