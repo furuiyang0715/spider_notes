@@ -14,10 +14,15 @@ class MyProcess(multiprocessing.Process):
 
 
 def main():
+    processes = []
     for i in range(2, 5):
         p = MyProcess(i)
         p.daemon = True
         p.start()
+        processes.append(p)
+
+    for p in processes:
+        p.join()
 
 
 if __name__ == "__main__":
