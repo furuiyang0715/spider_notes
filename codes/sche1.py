@@ -14,7 +14,8 @@ def child_job():
 
 
 def main_job():
-    sched.add_job(child_job, trigger=DateTrigger(), id="123")
+    # sched.add_job(child_job, trigger=DateTrigger(), id="123")
+    sched.add_job(child_job, max_instances=10, trigger=DateTrigger(), id="123")
 
 
 if __name__ == "__main__":
