@@ -1,4 +1,7 @@
 ## python 爬虫中的字符串处理 
+### 参考
+- https://www.cnblogs.com/BlackStorm/p/6359005.html 
+
 ### 去除字符串中的空白字符 
 （1）空白字符位于左右两边 
 ```python
