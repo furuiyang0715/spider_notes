@@ -4,13 +4,16 @@ import asyncio
 
 import aiohttp
 
+from aiohttp import TCPConnector
+
 import time
 
 start = time.time()
 
 
 async def get(url):
-    session = aiohttp.ClientSession()
+    connector = TCPConnector(verify_ssl=False)
+    session = aiohttp.ClientSession(connector=TCPConnector(verify_ssl=False))
     response = await session.get(url)
     await response.text()
     await session.close()
@@ -18,7 +21,8 @@ async def get(url):
 
 
 async def request():
-    url = 'https://static4.scrape.center/'
+    # url = 'https://static4.scrape.center/'
+    url = 'https://www.baidu.com'
     print('Waiting for', url)
     response = await get(url)
     print('Get response from', url, 'response', response)
