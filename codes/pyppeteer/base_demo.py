@@ -32,6 +32,14 @@ print('mac 平台下载链接为：{}'.format(pyppeteer.chromium_downloader.down
 '''
 
 
+'''
+另外一种解决办法：（未测试）
+
+pip install pyppeteer安装成功之后，建议再运行pyppeteer-install，因为首次运行pyppeteer会自动下载chromium对应的版本，
+这个经常下载失败，会使程序运行不了。报错：urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='storage.googleapis.com', port=443): Max retries exceeded with url: /chromium-browser-snapshots/Win_x64/588429/chrome-win32.zip (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'tls_process_server_certificate', 'certificate verify failed')])"))) 
+'''
+
+
 async def main():
     browser = await launch()
     page = await browser.newPage()
