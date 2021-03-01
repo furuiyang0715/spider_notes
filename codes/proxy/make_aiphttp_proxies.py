@@ -3,6 +3,7 @@ import aiohttp
 proxy = 'http://127.0.0.1:7890'
 
 
+# 设置认证代理: proxy = 'http://username:password@127.0.0.1:7890'
 async def main():
     async with aiohttp.ClientSession() as session:
         async with session.get('https://httpbin.org/get', proxy=proxy) as response:
