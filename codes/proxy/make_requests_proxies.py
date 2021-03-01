@@ -39,3 +39,6 @@ except requests.exceptions.ConnectionError as e:
 #  "url": "https://httpbin.org/get"
 #
 # }
+
+
+# 在代理需要进行持续认证时的写法: proxy = 'username:password@127.0.0.1:7890'
